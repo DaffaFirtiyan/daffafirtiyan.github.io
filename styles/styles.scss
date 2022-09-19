@@ -8,7 +8,7 @@
 /* variables */
 :root{
     --color-primary: #191d2b;
-    --color-secondary: #4368ee;
+    --color-secondary: #985be7;
     --color-white: #fff;
     --color-black: #000;
     --color-gray-0: #f8f8f8;
@@ -19,7 +19,8 @@
     --color-gray-5: #2a3e35;
     --color-gray-6: #12181b;
     --br-sm-2: 14px;
-
+    --box-shadow-1: 0 3px 15px rgba(0, 0, 0, 0.3);
+    --transition-ease: all .4s ease-in-out;
 }
 
 body{
@@ -27,7 +28,7 @@ body{
     font-family: 'Poppins', sans-serif;
     font-size: 1.1rem;
     color: var(--color-white);
-    transition: all .4s ease-in-out;
+    transition: var(--transition-ease);
 }
 a{
     display: inline-block;
@@ -53,7 +54,7 @@ section{
 
 .section{
     transform: translateY(-100%) scale(0); //setup so that the sections are off screen
-    transition: all .4s ease-in-out;
+    transition: var(--transition-ease);
     background-color: var(--color-primary);
 }
 
@@ -73,4 +74,42 @@ section{
 .sec4{
     display: none;
     transform: translateY(0) scale(1);
+}
+
+// controls are the controllers that change the page section
+.controls {
+    position: fixed; // stay fixed because this is the parent container
+    z-index: 10; // always at the top
+    top: 50%;
+    right: 3%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(-50%);
+    .active-btn{
+        background-color: var(--color-secondary) !important;
+        transition: var(--transition-ease);
+        i{
+            color: var(--color-white) !important;
+        }
+    }
+    .control{
+        padding: 1rem;
+        cursor: pointer;
+        background-color: var(--color-gray-4);
+        width: 55px;
+        height: 55px;
+        border-radius: 50%; // make the background of the buttons rounded
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: .7rem 0;
+        box-shadow: var(--box-shadow-1);
+        i { // the icons
+            font-size: 1.2rem;
+            color: var(--color-gray-2);
+            pointer-events: none;
+        }
+    }
 }
