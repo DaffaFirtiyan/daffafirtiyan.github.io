@@ -67,16 +67,23 @@ section {
 .sec2 {
   display: none;
   transform: translateY(0) scale(1);
+  background-color: slateblue;
 }
 
 .sec3 {
   display: none;
   transform: translateY(0) scale(1);
+  background-color: darkgreen;
 }
 
 .sec4 {
   display: none;
   transform: translateY(0) scale(1);
+  background-color: saddlebrown;
+}
+
+.active {
+  display: block;
 }
 
 .controls {
