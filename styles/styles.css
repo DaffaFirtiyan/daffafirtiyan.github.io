@@ -378,6 +378,7 @@ section {
   color: var(--color-gray-2);
 }
 
+/* projects contents */
 /* Independent components */
 .btn-container {
   display: flex;
@@ -435,15 +436,4 @@ section {
 }
 .main-title h2 span {
   color: var(--color-secondary);
-}
-.main-title h2 .bg-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  color: var(--color-gray-5);
-  transition: var(--transition-ease);
-  z-index: -1;
-  transform: translate(-50%, -50%);
-  font-weight: 800;
-  font-size: 6.3rem;
 }/*# sourceMappingURL=styles.css.map */
