@@ -14,7 +14,7 @@
     --color-gray-1: #6c7983;
     --color-gray-2: #6c7983;
     --color-gray-3: #6c7983;
-    --color-gray-4: #454e56;
+    --color-gray-4: #f8f8f8;
     --color-gray-5: #f8f8f8;
     --color-gray-6: #12181b;
 }
@@ -34,7 +34,7 @@
     --color-gray-6: #12181b;
     --br-sm-2: 14px;
     --box-shadow-1: 0 3px 15px rgba(0, 0, 0, 0.3);
-    --transition-ease: all .3s ease-in-out;
+    --transition-ease: all .09s ease-in-out;
 }
 
 body{
@@ -95,7 +95,7 @@ section{
 
 .active{
     display: block;
-    animation: scaleAnim 1s ease-in-out;
+    animation: scaleAnim .09s ease-in-out;
     @keyframes scaleAnim {
         0%{
             transform: translateY(-100%) scaleY(0);
@@ -328,7 +328,7 @@ section{
                         width: 95%;
                     }
                     .finance {
-                        width: 46%;
+                        width: 78%;
                     }
                     .compsci {
                         width: 100%;
@@ -359,7 +359,7 @@ section{
 /* timeline content */
 .timeline {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     grid-gap: 2rem;
     padding-bottom: 3rem;
     .timeline-item {
@@ -401,8 +401,10 @@ section{
                 font-size: 1.2rem;
             }
         }
-        p {
+        li {
             color: var(--color-gray-2);
+            list-style-type: circle;
+            margin-left: 1.5rem;
         }
     }
 }
@@ -508,7 +510,7 @@ section{
                 height: 50px;
                 border-radius: 50%;
                 margin: 0 .4rem;
-                transition: all .1s ease-in-out;
+                transition: all .09s ease-in-out;
                 &:hover {
                     background-color: var(--color-secondary);
                     i {
