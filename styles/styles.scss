@@ -22,7 +22,7 @@
 /* variables */
 :root{
     --color-primary: #191d2b;
-    --color-secondary: #985be7;
+    --color-secondary: #E7C25B;
     --color-white: #fff;
     --color-black: #000;
     --color-gray-0: #f8f8f8;
@@ -554,7 +554,7 @@ section{
         }
         .submit-btn {
             display: flex;
-            justify-content: flex-start;
+            justify-content: flex-end;
         }
     }
 }
