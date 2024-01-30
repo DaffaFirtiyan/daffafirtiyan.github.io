@@ -1,0 +1,45 @@
+body {
+    background-image: url(img/field.jpg);
+    background-size: cover;  /* This ensures the image covers the entire viewport */
+    background-repeat: no-repeat;  /* This prevents the background from repeating */
+    background-position: center 20px;
+    margin: 0;  /* Remove default margin to ensure full coverage */
+    height: 100vh;  /* Set the height to 100% of the viewport height */
+    color: #fff;
+}
+
+.heading {
+    font-size: 3.6em;
+    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000; 
+}
+
+.sub-heading {
+    font-size: 2em;
+    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000; 
+}
+
+.pink {
+    color: pink;
+    font-size: 1.5em;
+}
+
+.black {
+    color: #000;
+}
+
+.hidden {
+    display: none;
+}
+
+#yippee {
+    width: 100%;
+    height: auto;
+}
