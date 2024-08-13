@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title><3</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <link rel="stylesheet" href="val.css">
+    </head>
+    <body>
+        <div class="container vh-100">
+            <div id="home-page" class="row">
+                <div class="row" style="height: 120px;"></div>
+                <div class="row">
+                    <div class="col-2"></div>
+                    <div class="col-8">
+                        <img src="img/cat-cat-love.gif" alt="cat" id="cat" class="img-fluid">
+                    </div>
+                    <div class="col-2"></div>
+                </div>
+                <div class="row">
+                    <div class="col-2"></div>
+                    <div class="col-10 justify-content-center">
+                        <span class="heading">HELLO <span class="pink">PRETTI</span></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-1"></div>
+                    <div class="col-10">
+                        <span class="sub-heading">will you be my <span class="pink">valentines</span>????</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="row" style="height: 30px;"></div>
+                    <div class="col-2"></div>
+                    <div class="col-3">
+                        <button type="button" class="btn btn-danger float-end" onclick="sheSaidNo()">no</button>
+                    </div>
+                    <div class="col-5">
+                        <button type="button" class="btn btn-primary btn-lg float-start" onclick="showPage('yes-page'); playAudio('yippeemp3')">YES!</button>
+                    </div>
+                </div>
+            </div>
+            <div id="yes-page" class="row hidden">
+                <div class="row" style="height: 200px;"></div>
+                <div class="row" style="height: 100px;">
+                    <span class="sub-heading">YIIIPPPPEEEEEEEEEE</span>
+                </div>
+                <div class="row">
+                    <div class="col-2">
+                        <img src="img/yippee.gif" alt="yippeeee" id="yippee">
+                    </div>
+                    <div class="col-6">
+                        <img src="img/yippee.gif" alt="yippeeee" id="yippee">
+                    </div>
+                    <div class="col-3">
+                        <img src="img/yippee.gif" alt="yippeeee" id="yippee">
+                    </div>
+                </div>
+                <div class="row">
+                    <span class="sub-heading">your <span class="pink">PACKAGE</span> will be delivered as soon as i finish moving</span>
+                </div>
+                <div class="row">
+                    <button type="button" class="btn btn-primary btn-lg " onclick="sheSaidYes()"><span class="pink">i lov u</span></button>
+                </div>
+            </div>
+            <div id="no-page" class="row hidden">
+                <img src="img/thousand-yard-stare-cat.gif" alt="">
+                <img src="img/thousand-yard-stare-cat.gif" alt="">
+            </div>
+            <div id="yes-yes-page" class="row hidden">
+                <div class="row" style="height:300px"></div>
+                <div class="row">
+                    <div class="justify-content-center align-items-center">
+                        <img id="gifDisplay" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <audio id="yippeemp3" src="audio/Yippee - Meme Sound Effect.mp3"></audio>
+        <audio id="nooooo" src="audio/Download.mp3"></audio>
+        <audio id="lavieenrose" src="audio/lavieenrose.mp3"></audio>
+
+        <script>
+            var gifUrls = [
+                "img/dance1.gif",
+                "img/dance2.gif",
+                "img/dance3.gif",
+                "img/dance4.gif",
+                "img/dance5.gif"
+            ];
+            var currentIndex = 0;
+            var gifDisplay = document.getElementById("gifDisplay");
+            var rotationInterval;
+
+            function showPage(pageId) {
+                document.getElementById('home-page').classList.add('hidden');
+                document.getElementById('yes-page').classList.add('hidden');
+                document.getElementById('yes-yes-page').classList.add('hidden');
+                document.getElementById('no-page').classList.add('hidden');
+
+                document.getElementById(pageId).classList.remove('hidden');
+            }
+
+            function playAudio(mp3) {
+                document.getElementById(mp3).play();
+            }
+
+            
+
+            function showNextGif() {
+                gifDisplay.src = gifUrls[currentIndex];
+                currentIndex = (currentIndex + 1) % gifUrls.length;  // Loop back to the beginning if at the end
+            }
+
+            function startRotation() {
+                // Start rotation only if it hasn't started already
+                if (!rotationInterval) {
+                    showNextGif();  // Show the first GIF immediately
+                    rotationInterval = setInterval(showNextGif, 4000);  // Set interval to change GIF every 4 seconds
+                }
+            }
+
+            function sheSaidYes() {
+                showPage('yes-yes-page');
+                playAudio('lavieenrose');
+                startRotation();
+
+                // Delayed function after 20 seconds
+                setTimeout(function() {
+                    showPage('home-page');
+                }, 20000);  // 20,000 milliseconds = 20 seconds
+            }
+
+            function sheSaidNo() {
+                showPage('no-page'); 
+                playAudio('nooooo');
+
+                setTimeout(function() {
+                    showPage('home-page');
+                }, 17000);  
+            }
+        </script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        
+    </body>           
+</html>

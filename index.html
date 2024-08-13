@@ -1,151 +1,104 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title><3</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-        <link rel="stylesheet" href="val.css">
-    </head>
-    <body>
-        <div class="container vh-100">
-            <div id="home-page" class="row">
-                <div class="row" style="height: 120px;"></div>
-                <div class="row">
-                    <div class="col-2"></div>
-                    <div class="col-8">
-                        <img src="img/cat-cat-love.gif" alt="cat" id="cat" class="img-fluid">
-                    </div>
-                    <div class="col-2"></div>
-                </div>
-                <div class="row">
-                    <div class="col-2"></div>
-                    <div class="col-10 justify-content-center">
-                        <span class="heading">HELLO <span class="pink">PRETTI</span></span>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-1"></div>
-                    <div class="col-10">
-                        <span class="sub-heading">will you be my <span class="pink">valentines</span>????</span>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="row" style="height: 30px;"></div>
-                    <div class="col-2"></div>
-                    <div class="col-3">
-                        <button type="button" class="btn btn-danger float-end" onclick="sheSaidNo()">no</button>
-                    </div>
-                    <div class="col-5">
-                        <button type="button" class="btn btn-primary btn-lg float-start" onclick="showPage('yes-page'); playAudio('yippeemp3')">YES!</button>
-                    </div>
-                </div>
-            </div>
-            <div id="yes-page" class="row hidden">
-                <div class="row" style="height: 200px;"></div>
-                <div class="row" style="height: 100px;">
-                    <span class="sub-heading">YIIIPPPPEEEEEEEEEE</span>
-                </div>
-                <div class="row">
-                    <div class="col-2">
-                        <img src="img/yippee.gif" alt="yippeeee" id="yippee">
-                    </div>
-                    <div class="col-6">
-                        <img src="img/yippee.gif" alt="yippeeee" id="yippee">
-                    </div>
-                    <div class="col-3">
-                        <img src="img/yippee.gif" alt="yippeeee" id="yippee">
-                    </div>
-                </div>
-                <div class="row">
-                    <span class="sub-heading">your <span class="pink">PACKAGE</span> will be delivered as soon as i finish moving</span>
-                </div>
-                <div class="row">
-                    <button type="button" class="btn btn-primary btn-lg " onclick="sheSaidYes()"><span class="pink">i lov u</span></button>
-                </div>
-            </div>
-            <div id="no-page" class="row hidden">
-                <img src="img/thousand-yard-stare-cat.gif" alt="">
-                <img src="img/thousand-yard-stare-cat.gif" alt="">
-            </div>
-            <div id="yes-yes-page" class="row hidden">
-                <div class="row" style="height:300px"></div>
-                <div class="row">
-                    <div class="justify-content-center align-items-center">
-                        <img id="gifDisplay" class="img-fluid">
-                    </div>
-                </div>
-            </div>
-        </div>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daffa</title>
+    <style>
+        body {
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
 
-        <audio id="yippeemp3" src="audio/Yippee - Meme Sound Effect.mp3"></audio>
-        <audio id="nooooo" src="audio/Download.mp3"></audio>
-        <audio id="lavieenrose" src="audio/lavieenrose.mp3"></audio>
+        a { text-decoration: none; }
 
-        <script>
-            var gifUrls = [
-                "img/dance1.gif",
-                "img/dance2.gif",
-                "img/dance3.gif",
-                "img/dance4.gif",
-                "img/dance5.gif"
-            ];
-            var currentIndex = 0;
-            var gifDisplay = document.getElementById("gifDisplay");
-            var rotationInterval;
+        main {
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            justify-content: center;
+            line-height: 0;
+        }
 
-            function showPage(pageId) {
-                document.getElementById('home-page').classList.add('hidden');
-                document.getElementById('yes-page').classList.add('hidden');
-                document.getElementById('yes-yes-page').classList.add('hidden');
-                document.getElementById('no-page').classList.add('hidden');
+        #darkModeButton {
+            position: fixed;
+            width: 1.5rem;
+            height: 1.5rem;
+            z-index: 10;
+            right: 3rem;
+            top: 1rem;
+            border-radius: 0.375rem;
+            border: none;
+        }
 
-                document.getElementById(pageId).classList.remove('hidden');
-            }
+        .bg-violet-300 {
+            background-color: #d8b4fe;
+        }
+        .dark .bg-orange-300 {
+            background-color: #fdba74;
+        }
+        .dark-mode {
+            background-color: #000;
+            color: #fff;
+        }
+    </style>
+</head>
+<body id="body">
+    <button id="darkModeButton" type="button" class="bg-violet-300"></button>
+    <main>
+        <h1>Daffa Firtiyan</h1>
+        <p><a href="https://daffafirtiyan.github.io/portfolio/">Portfolio</a> or <a href="mailto:mdaffa.anzalna@gmail.com">email me</a></p>
+        <p>Wellington, New Zealand</p>
+    </main>
 
-            function playAudio(mp3) {
-                document.getElementById(mp3).play();
-            }
+    <script>
+        let dark = true;
+        if (!window.matchMedia('(prefers-color-scheme:dark)').matches) { dark = false }
+        const sun = `
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
+            </svg>
+        `;
 
-            
-
-            function showNextGif() {
-                gifDisplay.src = gifUrls[currentIndex];
-                currentIndex = (currentIndex + 1) % gifUrls.length;  // Loop back to the beginning if at the end
-            }
-
-            function startRotation() {
-                // Start rotation only if it hasn't started already
-                if (!rotationInterval) {
-                    showNextGif();  // Show the first GIF immediately
-                    rotationInterval = setInterval(showNextGif, 4000);  // Set interval to change GIF every 4 seconds
-                }
-            }
-
-            function sheSaidYes() {
-                showPage('yes-yes-page');
-                playAudio('lavieenrose');
-                startRotation();
-
-                // Delayed function after 20 seconds
-                setTimeout(function() {
-                    showPage('home-page');
-                }, 20000);  // 20,000 milliseconds = 20 seconds
-            }
-
-            function sheSaidNo() {
-                showPage('no-page'); 
-                playAudio('nooooo');
-
-                setTimeout(function() {
-                    showPage('home-page');
-                }, 17000);  
-            }
-        </script>
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        const moon = `
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="white" className="size-6">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
+            </svg>
+        `;
         
-    </body>           
+        const themeSwitchButton = document.getElementById('darkModeButton');
+        const body = document.getElementById('body');
+
+        const updateTheme = () => {
+            if (dark) {
+                document.documentElement.classList.add('dark');
+                themeSwitchButton.innerHTML = sun;
+                themeSwitchButton.classList.add('bg-orange-300');
+                themeSwitchButton.classList.remove('bg-violet-300');
+                body.classList.add('dark-mode');
+            } else {
+                document.documentElement.classList.remove('dark');
+                themeSwitchButton.innerHTML = moon;
+                themeSwitchButton.classList.add('bg-violet-300');
+                themeSwitchButton.classList.remove('bg-orange-300');
+                body.classList.remove('dark-mode');
+            }
+        }
+
+        const handleThemeSwitch = () => {
+            if (dark) {
+                dark = false;
+            } else {
+                dark = true;
+            }
+            updateTheme()
+        }
+
+        themeSwitchButton.addEventListener('click', handleThemeSwitch);
+        updateTheme();
+    </script>
+</body>
 </html>
